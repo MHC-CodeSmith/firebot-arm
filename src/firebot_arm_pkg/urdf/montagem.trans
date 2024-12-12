@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<robot name="montagem" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<transmission name="linkvertical2_to_linkvertical1_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="linkvertical2_to_linkvertical1">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="linkvertical2_to_linkvertical1_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="linkhorizontal1_to_linkvertical2_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="linkhorizontal1_to_linkvertical2">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="linkhorizontal1_to_linkvertical2_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="linkvertical1_to_base_link_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="linkvertical1_to_base_link">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="linkvertical1_to_base_link_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+</robot>
