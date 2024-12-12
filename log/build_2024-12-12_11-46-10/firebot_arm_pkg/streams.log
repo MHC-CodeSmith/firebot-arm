@@ -1,0 +1,50 @@
+[0.601s] Invoking command in '/home/developer/ARM_ws/src/firebot_arm_pkg': PYTHONPATH=/home/developer/ARM_ws/build/firebot_arm_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/developer/ARM_ws/install/firebot_arm_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/firebot_arm_pkg build --build-base /home/developer/ARM_ws/build/firebot_arm_pkg/build install --record /home/developer/ARM_ws/build/firebot_arm_pkg/install.log --single-version-externally-managed install_data
+[0.809s] running egg_info
+[0.809s] creating ../../build/firebot_arm_pkg/firebot_arm_pkg.egg-info
+[0.810s] writing ../../build/firebot_arm_pkg/firebot_arm_pkg.egg-info/PKG-INFO
+[0.810s] writing dependency_links to ../../build/firebot_arm_pkg/firebot_arm_pkg.egg-info/dependency_links.txt
+[0.810s] writing entry points to ../../build/firebot_arm_pkg/firebot_arm_pkg.egg-info/entry_points.txt
+[0.810s] writing requirements to ../../build/firebot_arm_pkg/firebot_arm_pkg.egg-info/requires.txt
+[0.810s] writing top-level names to ../../build/firebot_arm_pkg/firebot_arm_pkg.egg-info/top_level.txt
+[0.810s] writing manifest file '../../build/firebot_arm_pkg/firebot_arm_pkg.egg-info/SOURCES.txt'
+[0.812s] reading manifest file '../../build/firebot_arm_pkg/firebot_arm_pkg.egg-info/SOURCES.txt'
+[0.812s] writing manifest file '../../build/firebot_arm_pkg/firebot_arm_pkg.egg-info/SOURCES.txt'
+[0.812s] running build
+[0.812s] running build_py
+[0.813s] creating /home/developer/ARM_ws/build/firebot_arm_pkg/build
+[0.813s] creating /home/developer/ARM_ws/build/firebot_arm_pkg/build/lib
+[0.813s] creating /home/developer/ARM_ws/build/firebot_arm_pkg/build/lib/firebot_arm_pkg
+[0.813s] copying firebot_arm_pkg/__init__.py -> /home/developer/ARM_ws/build/firebot_arm_pkg/build/lib/firebot_arm_pkg
+[0.813s] running install
+[0.813s] running install_lib
+[0.814s] creating /home/developer/ARM_ws/install/firebot_arm_pkg/lib/python3.10/site-packages/firebot_arm_pkg
+[0.814s] copying /home/developer/ARM_ws/build/firebot_arm_pkg/build/lib/firebot_arm_pkg/__init__.py -> /home/developer/ARM_ws/install/firebot_arm_pkg/lib/python3.10/site-packages/firebot_arm_pkg
+[0.814s] byte-compiling /home/developer/ARM_ws/install/firebot_arm_pkg/lib/python3.10/site-packages/firebot_arm_pkg/__init__.py to __init__.cpython-310.pyc
+[0.815s] running install_data
+[0.815s] creating /home/developer/ARM_ws/install/firebot_arm_pkg/share/ament_index
+[0.815s] creating /home/developer/ARM_ws/install/firebot_arm_pkg/share/ament_index/resource_index
+[0.815s] creating /home/developer/ARM_ws/install/firebot_arm_pkg/share/ament_index/resource_index/packages
+[0.815s] copying resource/firebot_arm_pkg -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/ament_index/resource_index/packages
+[0.815s] copying package.xml -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg
+[0.815s] creating /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/launch
+[0.815s] copying launch/display.launch.py -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/launch
+[0.815s] copying launch/gazebo.launch.py -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/launch
+[0.816s] creating /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/config
+[0.816s] copying config/display.rviz -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/config
+[0.816s] copying config/controllers.yaml -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/config
+[0.816s] creating /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/urdf
+[0.816s] copying urdf/montagem.xacro -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/urdf
+[0.816s] copying urdf/montagem.trans -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/urdf
+[0.817s] copying urdf/montagem.gazebo -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/urdf
+[0.817s] copying urdf/materials.xacro -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/urdf
+[0.817s] copying urdf/montagem.control.xacro -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/urdf
+[0.817s] creating /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/meshes
+[0.817s] copying meshes/base_link.stl -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/meshes
+[0.817s] copying meshes/linkvertical1_1.stl -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/meshes
+[0.818s] copying meshes/linkhorizontal1_1.stl -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/meshes
+[0.818s] copying meshes/linkvertical2_1.stl -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/meshes
+[0.819s] running install_egg_info
+[0.821s] Copying ../../build/firebot_arm_pkg/firebot_arm_pkg.egg-info to /home/developer/ARM_ws/install/firebot_arm_pkg/lib/python3.10/site-packages/firebot_arm_pkg-0.0.1-py3.10.egg-info
+[0.822s] running install_scripts
+[0.840s] writing list of installed files to '/home/developer/ARM_ws/build/firebot_arm_pkg/install.log'
+[0.862s] Invoked command in '/home/developer/ARM_ws/src/firebot_arm_pkg' returned '0': PYTHONPATH=/home/developer/ARM_ws/build/firebot_arm_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/developer/ARM_ws/install/firebot_arm_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/firebot_arm_pkg build --build-base /home/developer/ARM_ws/build/firebot_arm_pkg/build install --record /home/developer/ARM_ws/build/firebot_arm_pkg/install.log --single-version-externally-managed install_data
