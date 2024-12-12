@@ -1,30 +1,27 @@
 controller_manager:
   ros__parameters:
     update_rate: 100
-    joint_state_controller:
-      type: joint_state_controller/JointStateController
-      joints:
-        - linkvertical1_to_base_link
-        - linkvertical2_to_linkvertical1
-        - linkhorizontal1_to_linkvertical2
+    use_sim_time: true
 
-    joint_trajectory_controller:
-      type: position_controllers/JointTrajectoryController
-      joints:
-        - linkvertical1_to_base_link
-        - linkvertical2_to_linkvertical1
-        - linkhorizontal1_to_linkvertical2
-      state_publish_rate: 50
-      action_monitor_rate: 10
-      constraints:
-        goal_time: 0.6
-        stopped_velocity_tolerance: 0.05
-        linkvertical1_to_base_link:
-          trajectory: 0.1
-          goal: 0.1
-        linkvertical2_to_linkvertical1:
-          trajectory: 0.1
-          goal: 0.1
-        linkhorizontal1_to_linkvertical2:
-          trajectory: 0.1
-          goal: 0.1
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    trajectory_position_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+trajectory_position_controller:
+  ros__parameters:
+    joints:
+      - linkvertical1_to_base_link
+      - linkvertical2_to_linkvertical1
+      - linkhorizontal1_to_linkvertical2
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    state_publish_rate: 50
+    action_monitor_rate: 20
+    allow_partial_joints_goal: false
+    constraints:
+      goal_time: 0.0

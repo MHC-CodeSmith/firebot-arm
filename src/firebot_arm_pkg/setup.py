@@ -14,7 +14,7 @@ setup(
         # Adiciona o arquivo package.xml que descreve o pacote
         ('share/' + package_name, ['package.xml']),
         # Inclui os arquivos de lançamento (launch files) para ROS 2
-        ('share/' + package_name + '/launch', ['launch/display.launch.py', 'launch/gazebo.launch.py']),
+        ('share/' + package_name + '/launch', ['launch/display.launch.py', 'launch/gazebo.launch.py','launch/controller.launch.py']),
         # Inclui arquivos de configuração, como RViz e controladores
         ('share/' + package_name + '/config', ['config/display.rviz', 'config/controllers.yaml']),
         # Inclui os modelos URDF/Xacro necessários para a simulação do robô

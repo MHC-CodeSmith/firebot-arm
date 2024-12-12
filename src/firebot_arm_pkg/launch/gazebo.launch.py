@@ -4,8 +4,6 @@ from launch.actions import IncludeLaunchDescription, TimerAction
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import PathJoinSubstitution
 from launch_ros.substitutions import FindPackageShare
-from launch.conditions import IfCondition
-from launch.substitutions import LaunchConfiguration
 import os
 import xacro
 from ament_index_python.packages import get_package_share_directory
@@ -19,20 +17,16 @@ def generate_launch_description():
     robot_description_config = xacro.process_file(xacro_file)
     robot_urdf = robot_description_config.toxml()  # Converte o conteúdo Xacro em XML
 
-    # Configuração do nó robot_state_publisher
-    # Publica os estados do robô (como links e juntas) para o ROS 2
+    # Publica o robot_description como um tópico
     robot_state_publisher_node = Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
         name='robot_state_publisher',
-        parameters=[
-            {'robot_description': robot_urdf}  # Define o modelo URDF a ser usado
-        ],
+        parameters=[{'robot_description': robot_urdf}],  # Publica o URDF
         output='screen'
     )
 
-    # Configuração do nó joint_state_publisher
-    # Publica os estados das juntas, útil para simulação estática
+    # Publica os estados das juntas
     joint_state_publisher_node = Node(
         package='joint_state_publisher',
         executable='joint_state_publisher',
@@ -40,25 +34,25 @@ def generate_launch_description():
         output='screen'
     )
 
-    # Inicia o servidor Gazebo (simulação física)
+    # Inicia o servidor Gazebo
     gazebo_server = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
             PathJoinSubstitution([
                 FindPackageShare('gazebo_ros'),
                 'launch',
-                'gzserver.launch.py'  # Arquivo de inicialização do servidor Gazebo
+                'gzserver.launch.py'
             ])
         ]),
-        launch_arguments={'pause': 'true'}.items()  # Inicia a simulação pausada
+        launch_arguments={'pause': 'true'}.items()
     )
 
-    # Inicia o cliente Gazebo (interface gráfica para a simulação)
+    # Inicia o cliente Gazebo
     gazebo_client = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
             PathJoinSubstitution([
                 FindPackageShare('gazebo_ros'),
                 'launch',
-                'gzclient.launch.py'  # Arquivo de inicialização do cliente Gazebo
+                'gzclient.launch.py'
             ])
         ])
     )
@@ -67,20 +61,16 @@ def generate_launch_description():
     urdf_spawn_node = Node(
         package='gazebo_ros',
         executable='spawn_entity.py',
-        arguments=[
-            '-entity', 'montagem',  # Nome da entidade (robô)
-            '-topic', 'robot_description'  # Fonte do modelo URDF
-        ],
+        arguments=['-entity', 'montagem', '-topic', 'robot_description'],
         output='screen'
     )
 
-    # Configuração do nó para gerenciar controladores usando ros2_control
+    # Configuração do controlador manager sem o URDF (depende do tópico robot_description)
     controller_manager = Node(
         package='controller_manager',
         executable='ros2_control_node',
         parameters=[
-            {'robot_description': robot_urdf},  # Passa o modelo URDF para o controlador
-            os.path.join(share_dir, 'config', 'controllers.yaml')  # Configuração dos controladores
+            os.path.join(share_dir, 'config', 'controllers.yaml')  # Configuração do controlador
         ],
         output='screen'
     )
@@ -92,7 +82,7 @@ def generate_launch_description():
             Node(
                 package='controller_manager',
                 executable='spawner',
-                arguments=['joint_state_controller', '--controller-manager', '/controller_manager'],
+                arguments=['joint_state_broadcaster', '--controller-manager', '/controller_manager'],
                 output='screen',
             )
         ],
@@ -105,7 +95,7 @@ def generate_launch_description():
             Node(
                 package='controller_manager',
                 executable='spawner',
-                arguments=['joint_trajectory_controller', '--controller-manager', '/controller_manager'],
+                arguments=['trajectory_position_controller', '--controller-manager', '/controller_manager'],
                 output='screen',
             )
         ],

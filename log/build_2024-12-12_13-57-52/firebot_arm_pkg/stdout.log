@@ -26,6 +26,7 @@ copying package.xml -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/fire
 creating /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/launch
 copying launch/display.launch.py -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/launch
 copying launch/gazebo.launch.py -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/launch
+copying launch/controller.launch.py -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/launch
 creating /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/config
 copying config/display.rviz -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/config
 copying config/controllers.yaml -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/config

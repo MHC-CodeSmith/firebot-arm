@@ -155,24 +155,6 @@
     <axis xyz="0.0 0.0 1.0"/>
   </joint>
 
-  <!-- Configuração de controle para os joints -->
-  <ros2_control name="montagem_control" type="system">
-    <hardware>
-      <plugin>gazebo_ros2_control/GazeboSystem</plugin>
-    </hardware>
-    <joint name="linkvertical1_to_base_link">
-      <state_interface name="position"/>
-      <command_interface name="position"/>
-    </joint>
-    <joint name="linkvertical2_to_linkvertical1">
-      <state_interface name="position"/>
-      <command_interface name="position"/>
-    </joint>
-    <joint name="linkhorizontal1_to_linkvertical2">
-      <state_interface name="position"/>
-      <command_interface name="position"/>
-    </joint>
-  </ros2_control>
 
   <!-- Links e juntas dummy para compensar inércia e centralizar o modelo -->
   <link name="dummy_base_inertia">

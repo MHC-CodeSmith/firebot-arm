@@ -2,6 +2,7 @@
 /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/package.xml
 /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/launch/display.launch.py
 /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/launch/gazebo.launch.py
+/home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/launch/controller.launch.py
 /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/config/display.rviz
 /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/config/controllers.yaml
 /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/urdf/montagem.xacro
