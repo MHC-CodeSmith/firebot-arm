@@ -1,12 +1,11 @@
 from launch_ros.actions import Node
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription, TimerAction
+from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import PathJoinSubstitution
 from launch_ros.substitutions import FindPackageShare
 import os
 import xacro
-from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
     # Define o diretório do pacote
@@ -65,42 +64,6 @@ def generate_launch_description():
         output='screen'
     )
 
-    # Configuração do controlador manager sem o URDF (depende do tópico robot_description)
-    controller_manager = Node(
-        package='controller_manager',
-        executable='ros2_control_node',
-        parameters=[
-            os.path.join(share_dir, 'config', 'controllers.yaml')  # Configuração do controlador
-        ],
-        output='screen'
-    )
-
-    # Spawner para o controlador de estado das juntas
-    spawner_joint_state_controller = TimerAction(
-        period=2.0,  # Aguarda 2 segundos antes de iniciar
-        actions=[
-            Node(
-                package='controller_manager',
-                executable='spawner',
-                arguments=['joint_state_broadcaster', '--controller-manager', '/controller_manager'],
-                output='screen',
-            )
-        ],
-    )
-
-    # Spawner para o controlador de trajetória das juntas
-    spawner_joint_trajectory_controller = TimerAction(
-        period=4.0,  # Aguarda 4 segundos antes de iniciar
-        actions=[
-            Node(
-                package='controller_manager',
-                executable='spawner',
-                arguments=['trajectory_position_controller', '--controller-manager', '/controller_manager'],
-                output='screen',
-            )
-        ],
-    )
-
     # Retorna a descrição do lançamento contendo todos os nós e ações definidos
     return LaunchDescription([
         robot_state_publisher_node,
@@ -108,7 +71,4 @@ def generate_launch_description():
         gazebo_server,
         gazebo_client,
         urdf_spawn_node,
-        controller_manager,
-        spawner_joint_state_controller,
-        spawner_joint_trajectory_controller,
     ])

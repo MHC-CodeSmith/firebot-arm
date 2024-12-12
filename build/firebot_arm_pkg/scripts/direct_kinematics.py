@@ -1,0 +1,1 @@
+/home/developer/ARM_ws/src/firebot_arm_pkg/scripts/direct_kinematics.py

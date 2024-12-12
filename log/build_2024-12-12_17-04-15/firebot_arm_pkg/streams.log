@@ -1,0 +1,38 @@
+[0.612s] Invoking command in '/home/developer/ARM_ws/build/firebot_arm_pkg': PYTHONPATH=/home/developer/ARM_ws/build/firebot_arm_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/developer/ARM_ws/install/firebot_arm_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/developer/ARM_ws/build/firebot_arm_pkg/build --no-deps symlink_data --force
+[0.836s] running develop
+[0.836s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[0.836s]   warnings.warn(
+[0.966s] running egg_info
+[0.967s] writing firebot_arm_pkg.egg-info/PKG-INFO
+[0.967s] writing dependency_links to firebot_arm_pkg.egg-info/dependency_links.txt
+[0.967s] writing entry points to firebot_arm_pkg.egg-info/entry_points.txt
+[0.967s] writing requirements to firebot_arm_pkg.egg-info/requires.txt
+[0.967s] writing top-level names to firebot_arm_pkg.egg-info/top_level.txt
+[0.969s] reading manifest file 'firebot_arm_pkg.egg-info/SOURCES.txt'
+[0.970s] writing manifest file 'firebot_arm_pkg.egg-info/SOURCES.txt'
+[0.973s] running build_ext
+[0.974s] Creating /home/developer/ARM_ws/install/firebot_arm_pkg/lib/python3.10/site-packages/firebot-arm-pkg.egg-link (link to .)
+[0.974s] Installing direct_kinematics script to /home/developer/ARM_ws/install/firebot_arm_pkg/lib/firebot_arm_pkg
+[0.975s] Installing inverse_kinematics script to /home/developer/ARM_ws/install/firebot_arm_pkg/lib/firebot_arm_pkg
+[0.976s] Installing direct_kinematics.py script to /home/developer/ARM_ws/install/firebot_arm_pkg/lib/firebot_arm_pkg
+[0.976s] Installing inverse_kinematics.py script to /home/developer/ARM_ws/install/firebot_arm_pkg/lib/firebot_arm_pkg
+[0.977s] 
+[0.977s] Installed /home/developer/ARM_ws/build/firebot_arm_pkg
+[0.977s] running symlink_data
+[0.977s] symbolically linking /home/developer/ARM_ws/build/firebot_arm_pkg/resource/firebot_arm_pkg -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/ament_index/resource_index/packages
+[0.977s] symbolically linking /home/developer/ARM_ws/build/firebot_arm_pkg/package.xml -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg
+[0.977s] symbolically linking /home/developer/ARM_ws/build/firebot_arm_pkg/launch/display.launch.py -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/launch
+[0.977s] symbolically linking /home/developer/ARM_ws/build/firebot_arm_pkg/launch/gazebo.launch.py -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/launch
+[0.977s] symbolically linking /home/developer/ARM_ws/build/firebot_arm_pkg/launch/controller.launch.py -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/launch
+[0.977s] symbolically linking /home/developer/ARM_ws/build/firebot_arm_pkg/config/display.rviz -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/config
+[0.978s] symbolically linking /home/developer/ARM_ws/build/firebot_arm_pkg/config/controllers.yaml -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/config
+[0.978s] symbolically linking /home/developer/ARM_ws/build/firebot_arm_pkg/urdf/montagem.xacro -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/urdf
+[0.978s] symbolically linking /home/developer/ARM_ws/build/firebot_arm_pkg/urdf/montagem.trans -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/urdf
+[0.978s] symbolically linking /home/developer/ARM_ws/build/firebot_arm_pkg/urdf/montagem.gazebo -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/urdf
+[0.978s] symbolically linking /home/developer/ARM_ws/build/firebot_arm_pkg/urdf/materials.xacro -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/urdf
+[0.978s] symbolically linking /home/developer/ARM_ws/build/firebot_arm_pkg/urdf/montagem.control.xacro -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/urdf
+[0.978s] symbolically linking /home/developer/ARM_ws/build/firebot_arm_pkg/meshes/base_link.stl -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/meshes
+[0.979s] symbolically linking /home/developer/ARM_ws/build/firebot_arm_pkg/meshes/linkvertical1_1.stl -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/meshes
+[0.979s] symbolically linking /home/developer/ARM_ws/build/firebot_arm_pkg/meshes/linkhorizontal1_1.stl -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/meshes
+[0.979s] symbolically linking /home/developer/ARM_ws/build/firebot_arm_pkg/meshes/linkvertical2_1.stl -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/meshes
+[1.005s] Invoked command in '/home/developer/ARM_ws/build/firebot_arm_pkg' returned '0': PYTHONPATH=/home/developer/ARM_ws/build/firebot_arm_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/developer/ARM_ws/install/firebot_arm_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/developer/ARM_ws/build/firebot_arm_pkg/build --no-deps symlink_data --force

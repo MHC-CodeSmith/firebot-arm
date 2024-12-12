@@ -6,8 +6,12 @@
 
   <!-- Plugin que conecta o controle ROS 2 com o simulador Gazebo -->
   <gazebo>
-    <plugin name="control" filename="libgazebo_ros_control.so"/>
+      <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+          <parameters>$(find firebot_arm_pkg)/config/controllers.yaml</parameters>
+      </plugin>
   </gazebo>
+
+
 
   <!-- Configurações físicas e visuais para o link base do robô -->
   <gazebo reference="base_link">

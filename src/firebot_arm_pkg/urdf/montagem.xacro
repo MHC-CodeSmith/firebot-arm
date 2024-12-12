@@ -38,10 +38,6 @@
   <xacro:property name="vertical1_visual_origin_xyz" value="-0.0 -0.0 -0.012"/>
   <xacro:property name="vertical1_collision_origin_xyz" value="-0.0 -0.0 -0.012"/>
 
-  <!-- Configuração de controle do Gazebo -->
-  <gazebo>
-    <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so"/>
-  </gazebo>
 
   <!-- Definição do link base -->
   <link name="base_link">

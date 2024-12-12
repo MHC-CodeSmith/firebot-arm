@@ -10,6 +10,13 @@ setup.py
 ../../build/firebot_arm_pkg/firebot_arm_pkg.egg-info/zip-safe
 config/controllers.yaml
 config/display.rviz
+firebot_arm_pkg.egg-info/PKG-INFO
+firebot_arm_pkg.egg-info/SOURCES.txt
+firebot_arm_pkg.egg-info/dependency_links.txt
+firebot_arm_pkg.egg-info/entry_points.txt
+firebot_arm_pkg.egg-info/requires.txt
+firebot_arm_pkg.egg-info/top_level.txt
+firebot_arm_pkg.egg-info/zip-safe
 launch/controller.launch.py
 launch/display.launch.py
 launch/gazebo.launch.py
@@ -20,9 +27,6 @@ meshes/linkvertical2_1.stl
 resource/firebot_arm_pkg
 scripts/direct_kinematics.py
 scripts/inverse_kinematics.py
-test/test_copyright.py
-test/test_flake8.py
-test/test_pep257.py
 urdf/materials.xacro
 urdf/montagem.control.xacro
 urdf/montagem.gazebo

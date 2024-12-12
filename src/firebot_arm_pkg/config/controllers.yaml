@@ -1,27 +1,18 @@
 controller_manager:
   ros__parameters:
-    update_rate: 100
+    update_rate: 100  # Frequência de atualização
     use_sim_time: true
 
-    joint_state_broadcaster:
-      type: joint_state_broadcaster/JointStateBroadcaster
-
-    trajectory_position_controller:
-      type: joint_trajectory_controller/JointTrajectoryController
+joint_state_broadcaster:
+  ros__parameters:
+    type: joint_state_broadcaster/JointStateBroadcaster
 
 trajectory_position_controller:
   ros__parameters:
+    type: joint_trajectory_controller/JointTrajectoryController
     joints:
       - linkvertical1_to_base_link
       - linkvertical2_to_linkvertical1
       - linkhorizontal1_to_linkvertical2
-    command_interfaces:
-      - position
-    state_interfaces:
-      - position
-      - velocity
     state_publish_rate: 50
-    action_monitor_rate: 20
-    allow_partial_joints_goal: false
-    constraints:
-      goal_time: 0.0
+    action_monitor_rate: 10

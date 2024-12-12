@@ -1,27 +1,22 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-<ros2_control name="GazeboSystem" type="system">
-    <hardware>
-        <plugin>gazebo_ros2_control/GazeboSystem</plugin>
-    </hardware>
-
+<ros2_control name="robot_hw" type="system">
     <joint name="linkvertical1_to_base_link">
         <command_interface name="position"/>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
     </joint>
-
     <joint name="linkvertical2_to_linkvertical1">
         <command_interface name="position"/>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
     </joint>
-
     <joint name="linkhorizontal1_to_linkvertical2">
         <command_interface name="position"/>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
     </joint>
 </ros2_control>
+
 
 </robot>
