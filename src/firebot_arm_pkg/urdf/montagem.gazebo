@@ -1,38 +1,50 @@
 <?xml version="1.0" ?>
 <robot name="montagem" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
-<xacro:property name="body_color" value="Gazebo/Silver" />
+  <!-- Define a cor do corpo do robô no simulador Gazebo -->
+  <xacro:property name="body_color" value="Gazebo/Silver" />
 
-<gazebo>
-  <plugin name="control" filename="libgazebo_ros_control.so"/>
-</gazebo>
-<gazebo reference="base_link">
-  <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
-  <gravity>true</gravity>
-</gazebo>
+  <!-- Plugin que conecta o controle ROS 2 com o simulador Gazebo -->
+  <gazebo>
+    <plugin name="control" filename="libgazebo_ros_control.so"/>
+  </gazebo>
 
-<gazebo reference="linkvertical2_1">
-  <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
-</gazebo>
+  <!-- Configurações físicas e visuais para o link base do robô -->
+  <gazebo reference="base_link">
+    <!-- Define o material (aparência) do link no Gazebo -->
+    <material>${body_color}</material>
+    <!-- Coeficiente de atrito estático -->
+    <mu1>0.2</mu1>
+    <!-- Coeficiente de atrito dinâmico -->
+    <mu2>0.2</mu2>
+    <!-- Permite colisões com o próprio robô -->
+    <self_collide>true</self_collide>
+    <!-- Ativa a gravidade para este link -->
+    <gravity>true</gravity>
+  </gazebo>
 
-<gazebo reference="linkhorizontal1_1">
-  <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
-</gazebo>
+  <!-- Configurações físicas e visuais para o link vertical 2 -->
+  <gazebo reference="linkvertical2_1">
+    <material>${body_color}</material>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <self_collide>true</self_collide>
+  </gazebo>
 
-<gazebo reference="linkvertical1_1">
-  <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
-  <self_collide>true</self_collide>
-</gazebo>
+  <!-- Configurações físicas e visuais para o link horizontal 1 -->
+  <gazebo reference="linkhorizontal1_1">
+    <material>${body_color}</material>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <self_collide>true</self_collide>
+  </gazebo>
+
+  <!-- Configurações físicas e visuais para o link vertical 1 -->
+  <gazebo reference="linkvertical1_1">
+    <material>${body_color}</material>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <self_collide>true</self_collide>
+  </gazebo>
 
 </robot>
