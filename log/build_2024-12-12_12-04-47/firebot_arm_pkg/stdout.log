@@ -9,16 +9,14 @@ writing manifest file '../../build/firebot_arm_pkg/firebot_arm_pkg.egg-info/SOUR
 reading manifest file '../../build/firebot_arm_pkg/firebot_arm_pkg.egg-info/SOURCES.txt'
 writing manifest file '../../build/firebot_arm_pkg/firebot_arm_pkg.egg-info/SOURCES.txt'
 running build
-running build_py
+running build_scripts
 creating /home/developer/ARM_ws/build/firebot_arm_pkg/build
-creating /home/developer/ARM_ws/build/firebot_arm_pkg/build/lib
-creating /home/developer/ARM_ws/build/firebot_arm_pkg/build/lib/firebot_arm_pkg
-copying firebot_arm_pkg/__init__.py -> /home/developer/ARM_ws/build/firebot_arm_pkg/build/lib/firebot_arm_pkg
+creating /home/developer/ARM_ws/build/firebot_arm_pkg/build/scripts-3.10
+copying scripts/direct_kinematics.py -> /home/developer/ARM_ws/build/firebot_arm_pkg/build/scripts-3.10
+copying scripts/inverse_kinematics.py -> /home/developer/ARM_ws/build/firebot_arm_pkg/build/scripts-3.10
+changing mode of /home/developer/ARM_ws/build/firebot_arm_pkg/build/scripts-3.10/direct_kinematics.py from 644 to 755
+changing mode of /home/developer/ARM_ws/build/firebot_arm_pkg/build/scripts-3.10/inverse_kinematics.py from 644 to 755
 running install
-running install_lib
-creating /home/developer/ARM_ws/install/firebot_arm_pkg/lib/python3.10/site-packages/firebot_arm_pkg
-copying /home/developer/ARM_ws/build/firebot_arm_pkg/build/lib/firebot_arm_pkg/__init__.py -> /home/developer/ARM_ws/install/firebot_arm_pkg/lib/python3.10/site-packages/firebot_arm_pkg
-byte-compiling /home/developer/ARM_ws/install/firebot_arm_pkg/lib/python3.10/site-packages/firebot_arm_pkg/__init__.py to __init__.cpython-310.pyc
 running install_data
 creating /home/developer/ARM_ws/install/firebot_arm_pkg/share/ament_index
 creating /home/developer/ARM_ws/install/firebot_arm_pkg/share/ament_index/resource_index
@@ -45,4 +43,11 @@ copying meshes/linkvertical2_1.stl -> /home/developer/ARM_ws/install/firebot_arm
 running install_egg_info
 Copying ../../build/firebot_arm_pkg/firebot_arm_pkg.egg-info to /home/developer/ARM_ws/install/firebot_arm_pkg/lib/python3.10/site-packages/firebot_arm_pkg-0.0.1-py3.10.egg-info
 running install_scripts
+creating /home/developer/ARM_ws/install/firebot_arm_pkg/lib/firebot_arm_pkg
+copying /home/developer/ARM_ws/build/firebot_arm_pkg/build/scripts-3.10/direct_kinematics.py -> /home/developer/ARM_ws/install/firebot_arm_pkg/lib/firebot_arm_pkg
+copying /home/developer/ARM_ws/build/firebot_arm_pkg/build/scripts-3.10/inverse_kinematics.py -> /home/developer/ARM_ws/install/firebot_arm_pkg/lib/firebot_arm_pkg
+changing mode of /home/developer/ARM_ws/install/firebot_arm_pkg/lib/firebot_arm_pkg/direct_kinematics.py to 755
+changing mode of /home/developer/ARM_ws/install/firebot_arm_pkg/lib/firebot_arm_pkg/inverse_kinematics.py to 755
+Installing direct_kinematics script to /home/developer/ARM_ws/install/firebot_arm_pkg/lib/firebot_arm_pkg
+Installing inverse_kinematics script to /home/developer/ARM_ws/install/firebot_arm_pkg/lib/firebot_arm_pkg
 writing list of installed files to '/home/developer/ARM_ws/build/firebot_arm_pkg/install.log'

@@ -10,7 +10,6 @@ setup.py
 ../../build/firebot_arm_pkg/firebot_arm_pkg.egg-info/zip-safe
 config/controllers.yaml
 config/display.rviz
-firebot_arm_pkg/__init__.py
 launch/display.launch.py
 launch/gazebo.launch.py
 meshes/base_link.stl
@@ -18,6 +17,8 @@ meshes/linkhorizontal1_1.stl
 meshes/linkvertical1_1.stl
 meshes/linkvertical2_1.stl
 resource/firebot_arm_pkg
+scripts/direct_kinematics.py
+scripts/inverse_kinematics.py
 test/test_copyright.py
 test/test_flake8.py
 test/test_pep257.py

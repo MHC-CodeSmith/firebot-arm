@@ -7,7 +7,7 @@ package_name = 'firebot_arm_pkg'
 setup(
     name=package_name,  # Nome do pacote
     version='0.0.1',  # Versão inicial do pacote
-    packages=[package_name],  # Diretório contendo o código Python do pacote
+    packages=[],  # Não há pacotes Python, apenas scripts
     data_files=[  # Arquivos adicionais que serão instalados junto com o pacote
         # Registra o pacote no índice de recursos do ROS 2
         ('share/ament_index/resource_index/packages', ['resource/' + package_name]),
@@ -33,6 +33,10 @@ setup(
             'meshes/linkvertical2_1.stl',  # Malha do segundo link vertical
         ]),
     ],
+    scripts=[
+        'scripts/direct_kinematics.py',  # Referência ao script direto
+        'scripts/inverse_kinematics.py',  # Referência ao script inverso
+    ],
     install_requires=['setuptools'],  # Dependência necessária para instalação
     zip_safe=True,  # Indica que o pacote pode ser distribuído como um arquivo zip
     maintainer='MHC',  # Nome do responsável pela manutenção do pacote
@@ -40,7 +44,11 @@ setup(
     description='Pacote de simulação do manipulador Firebot Arm',  # Descrição do pacote
     license='MIT',  # Licença do pacote
     tests_require=['pytest'],  # Dependências para rodar testes
+
     entry_points={
-        'console_scripts': [],  # Scripts executáveis do pacote (nenhum definido aqui)
+        'console_scripts': [
+            'direct_kinematics = direct_kinematics:main',  # Referência correta ao script direto
+            'inverse_kinematics = inverse_kinematics:main',  # Referência correta ao script inverso
+        ],
     },
 )
