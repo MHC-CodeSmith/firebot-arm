@@ -1,140 +1,157 @@
-Aqui está o `README.md` atualizado para refletir o progresso e a configuração atual do projeto:
+Aqui está um novo e detalhado `README.md` explicando passo a passo como configurar e rodar o projeto do zero.
 
-```markdown
+---
+
 # Firebot Arm Control
 
-Este projeto implementa a programação e simulação de um braço robótico utilizando ROS 2 Humble. Ele está configurado para rodar em um ambiente Docker com suporte a GPU e aplicações gráficas como RViz e Gazebo.
+Este projeto implementa a programação e simulação de um braço robótico utilizando ROS 2 Humble. O ambiente é configurado para rodar em Docker com suporte a GPU, permitindo a execução de aplicações gráficas como RViz e Gazebo.
 
 ---
 
-## Estrutura do Projeto
+## **Passo 1: Pré-requisitos**
 
-```plaintext
-.
-├── README.md                  # Descrição geral do projeto
-├── LICENSE                    # Licença do projeto
-├── .gitignore                 # Arquivos e diretórios ignorados pelo Git
-├── docker/                    # Configuração do Docker
-│   ├── Dockerfile             # Configuração da imagem Docker
-│   └── run_docker.sh          # Script para rodar o container Docker
-├── src/                       # Código-fonte do projeto
-│   ├── urdf/                  # Arquivos URDF e Xacro
-│   ├── config/                # Arquivos de configuração do ROS 2
-│   ├── scripts/               # Scripts auxiliares
-│   └── launch/                # Arquivos de lançamento do ROS 2
-├── tests/                     # Testes para o projeto
-│   ├── unit/                  # Testes unitários
-│   └── integration/           # Testes de integração
-├── docs/                      # Documentação do projeto
-│   ├── diagrams/              # Diagramas de fluxo e blocos
-│   └── manuals/               # Manuais de uso
-└── data/                      # Dados para simulações e configurações
-```
+Certifique-se de ter instalado:
+
+1. **Docker** e **Docker Compose**.
+   - Instale o Docker seguindo [este guia](https://docs.docker.com/engine/install/).
+   - Configure o NVIDIA Container Toolkit para habilitar GPU no Docker:
+     ```bash
+     sudo apt-get install -y nvidia-container-toolkit
+     sudo systemctl restart docker
+     ```
+
+2. **X11 Display** configurado para suporte gráfico:
+   - Execute o comando para permitir que o Docker acesse seu display:
+     ```bash
+     xhost +local:
+     ```
 
 ---
 
-## Como Configurar o Ambiente
+## **Passo 2: Build da Imagem Docker**
 
-### Pré-requisitos
-- **Docker** e **Docker Compose** instalados.
-- **NVIDIA Container Toolkit** (para suporte à GPU).
-
----
-
-### Configurando o Ambiente Docker
-
-1. **Clone o Repositório**
+1. Clone este repositório:
    ```bash
-   git clone git@github.com:MHC-CodeSmith/firebot-arm.git
+   git clone https://github.com/SEU_USUARIO/firebot-arm.git
    cd firebot-arm
    ```
 
-2. **Construa a Imagem Docker**
+2. Construa a imagem Docker utilizando o `Dockerfile` fornecido:
    ```bash
    docker build -t ros_arm:humble -f docker/Dockerfile .
    ```
 
-3. **Execute o Container com o Script**
-   Use o script `run_docker.sh` para iniciar o container:
+---
+
+## **Passo 3: Rodando o Container Docker**
+
+1. Execute o script `run_docker.sh` para iniciar o ambiente Docker: (lembre de dar chmod +X)
    ```bash
    ./run_docker.sh
    ```
 
+2. Após entrar no container, você verá o terminal do ambiente ROS 2 configurado.
+
 ---
 
-## Configuração no Container
+## **Passo 4: Configurando o Workspace**
 
-1. **Configurar o Ambiente ROS 2**
-   Dentro do container, configure o ambiente ROS 2:
+1. Dentro do container, vá até o workspace:
+   ```bash
+   cd /home/developer/ARM_ws
+   ```
+
+2. Limpe qualquer build anterior (caso tenha):
+   ```bash
+   rm -rf build install log
+   ```
+
+3. Compile o workspace:
+   ```bash
+   colcon build
+   ```
+
+4. Configure os ambientes ROS 2:
    ```bash
    source /opt/ros/humble/setup.bash
-   mkdir -p ~/ARM_ws/src
-   cd ~/ARM_ws
-   colcon build
-   echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
-   echo "source ~/ARM_ws/install/setup.bash" >> ~/.bashrc
-   source ~/.bashrc
-   ```
-
-2. **Criar um Pacote ROS 2**
-   Crie um pacote básico no workspace:
-   ```bash
-   cd ~/ARM_ws/src
-   ros2 pkg create --build-type ament_python firebot_arm_pkg
-   ```
-
-3. **Testar o Pacote**
-   Compile o workspace para verificar se o pacote foi criado corretamente:
-   ```bash
-   cd ~/ARM_ws
-   colcon build
+   source ~/ARM_ws/install/setup.bash
    ```
 
 ---
 
-## Estrutura do Pacote ROS 2
+## **Passo 5: Rodando a Simulação**
 
-Depois de criar o pacote `firebot_arm_pkg`, ele terá a seguinte estrutura:
+### 5.1. Executar o RViz
+Para visualizar o robô no RViz, rode:
+```bash
+ros2 launch firebot_arm_pkg display.launch.py
+```
+
+### 5.2. Executar o Gazebo
+Para carregar o robô no Gazebo, execute:
+```bash
+ros2 launch firebot_arm_pkg gazebo.launch.py
+```
+
+---
+
+## **Estrutura do Projeto**
+
+Abaixo está a estrutura do projeto:
+
 ```plaintext
-firebot_arm_pkg/
-├── package.xml               # Configuração do pacote ROS 2
-├── setup.py                  # Configuração do ambiente Python
-├── setup.cfg                 # Configuração do Python
-├── resource/                 # Recursos do pacote
-│   └── firebot_arm_pkg       # Arquivo de recurso
-├── firebot_arm_pkg/          # Diretório do código-fonte
-│   └── __init__.py           # Arquivo inicializador
-└── test/                     # Testes do pacote
-    ├── test_copyright.py     # Teste de copyright
-    ├── test_flake8.py        # Teste de conformidade PEP8
-    └── test_pep257.py        # Teste de conformidade PEP257
+.
+├── docker/
+│   ├── Dockerfile             # Configuração do ambiente Docker
+├── src/
+│   ├── firebot_arm_pkg/
+│   │   ├── config/            # Arquivos de configuração ROS 2
+│   │   ├── urdf/              # Arquivos URDF e Xacro
+│   │   ├── launch/            # Arquivos de lançamento ROS 2
+│   │   ├── scripts/           # Scripts auxiliares (opcional)
+│   │   └── meshes/            # Malhas do modelo do robô
+├── README.md                  # Documentação do projeto
+└── run_docker.sh              # Script para rodar o container
 ```
 
 ---
 
-## Problemas Conhecidos
+## **Resolução de Problemas**
 
-1. **Configuração de Chave SSH no Container**:
-   Certifique-se de mapear corretamente sua chave SSH ao rodar o container.
+### 1. **Erro de Permissão no X11 Display**
+   - Execute:
+     ```bash
+     xhost +local:
+     ```
 
-2. **Erro no Git (Identidade do Autor)**:
-   Dentro do container, configure o nome e e-mail do Git:
-   ```bash
-   git config --global user.name "Seu Nome"
-   git config --global user.email "seu_email@exemplo.com"
-   ```
+### 2. **Erro ao Conectar GPU**
+   - Certifique-se de que o NVIDIA Container Toolkit está instalado:
+     ```bash
+     sudo apt-get install nvidia-container-toolkit
+     sudo systemctl restart docker
+     ```
+
+### 3. **Problemas com Build no ROS 2**
+   - Certifique-se de ter limpado o workspace antes de rebuildar:
+     ```bash
+     cd /home/developer/ARM_ws
+     rm -rf build install log
+     colcon build
+     ```
 
 ---
 
-## Próximos Passos
-- Configurar e documentar os arquivos URDF/Xacro na pasta `src/urdf/`.
-- Adicionar configurações de lançamento na pasta `src/launch/`.
-- Implementar diagramas de fluxo no diretório `docs/diagrams/`.
+## **Próximos Passos**
+
+- Adicionar configurações adicionais para controladores e cinemática do robô.
+- Criar diagramas para documentar os fluxos de dados.
+- Melhorar a integração entre Gazebo e os controladores.
 
 ---
 
-## Licença
+## **Licença**
+
 Este projeto está licenciado sob a licença [MIT](LICENSE).
-```
 
-Esse `README.md` cobre as configurações atuais e indica os próximos passos. Se precisar de ajustes ou mais informações, é só pedir! 😊
+--- 
+
