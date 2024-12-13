@@ -18,8 +18,7 @@ meshes/linkhorizontal1_1.stl
 meshes/linkvertical1_1.stl
 meshes/linkvertical2_1.stl
 resource/firebot_arm_pkg
-scripts/direct_kinematics.py
-scripts/inverse_kinematics.py
+scripts/kinematics.py
 test/test_copyright.py
 test/test_flake8.py
 test/test_pep257.py

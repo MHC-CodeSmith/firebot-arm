@@ -34,8 +34,7 @@ setup(
         ]),
     ],
     scripts=[
-        'scripts/direct_kinematics.py',  # Referência ao script direto
-        'scripts/inverse_kinematics.py',  # Referência ao script inverso
+        'scripts/kinematics.py',  # Referência ao script direto
     ],
     install_requires=['setuptools'],  # Dependência necessária para instalação
     zip_safe=True,  # Indica que o pacote pode ser distribuído como um arquivo zip
@@ -47,8 +46,7 @@ setup(
 
     entry_points={
         'console_scripts': [
-            'direct_kinematics = direct_kinematics:main',  # Referência correta ao script direto
-            'inverse_kinematics = inverse_kinematics:main',  # Referência correta ao script inverso
+            'kinematics = kinematics:main',  # Referência correta ao script 
         ],
     },
 )

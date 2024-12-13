@@ -1,4 +1,3 @@
 [console_scripts]
-direct_kinematics = direct_kinematics:main
-inverse_kinematics = inverse_kinematics:main
+kinematics = kinematics:main
 

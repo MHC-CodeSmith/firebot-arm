@@ -1,0 +1,63 @@
+[0.000000] (-) TimerEvent: {}
+[0.000508] (firebot_arm_pkg) JobQueued: {'identifier': 'firebot_arm_pkg', 'dependencies': OrderedDict()}
+[0.000565] (firebot_arm_pkg) JobStarted: {'identifier': 'firebot_arm_pkg'}
+[0.099868] (-) TimerEvent: {}
+[0.200105] (-) TimerEvent: {}
+[0.300364] (-) TimerEvent: {}
+[0.400600] (-) TimerEvent: {}
+[0.500855] (-) TimerEvent: {}
+[0.505559] (firebot_arm_pkg) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/firebot_arm_pkg', 'build', '--build-base', '/home/developer/ARM_ws/build/firebot_arm_pkg/build', 'install', '--record', '/home/developer/ARM_ws/build/firebot_arm_pkg/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/developer/ARM_ws/src/firebot_arm_pkg', 'env': {'HOSTNAME': '4f938040527a', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'BROWSER': '/home/developer/.vscode-server/bin/f1a4fb101478ce6ec82fe9627c43efbf9e98c813/bin/helpers/browser.sh', 'HOME': '/home/developer', 'OLDPWD': '/home/developer', 'TERM_PROGRAM_VERSION': '1.95.3', 'VSCODE_IPC_HOOK_CLI': '/tmp/vscode-ipc-5c5cca63-e4c1-47ba-8383-12f0b37b35fe.sock', 'ROS_PYTHON_VERSION': '3', 'COLORTERM': 'truecolor', 'REMOTE_CONTAINERS': 'true', 'COLCON_PREFIX_PATH': '/home/developer/ARM_ws/install', 'ROS_DISTRO': 'humble', 'REMOTE_CONTAINERS_IPC': '/tmp/vscode-remote-containers-ipc-de049fd6-b0a2-4a9c-a85d-0d3e3c038f73.sock', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'LIBGL_ALWAYS_INDIRECT': '0', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/home/developer/.vscode-server/bin/f1a4fb101478ce6ec82fe9627c43efbf9e98c813/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'REMOTE_CONTAINERS_SOCKETS': '["/tmp/vscode-ssh-auth-de049fd6-b0a2-4a9c-a85d-0d3e3c038f73.sock","/home/developer/.gnupg/S.gpg-agent"]', 'DISPLAY': ':1', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/tmp/vscode-ssh-auth-de049fd6-b0a2-4a9c-a85d-0d3e3c038f73.sock', 'AMENT_PREFIX_PATH': '/home/developer/ARM_ws/install/firebot_arm_pkg:/opt/ros/humble', 'SHELL': '/bin/sh', 'PWD': '/home/developer/ARM_ws/build/firebot_arm_pkg', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/home/developer/ARM_ws/build/firebot_arm_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/developer/ARM_ws/install/firebot_arm_pkg/lib/python3.10/site-packages:/home/developer/ARM_ws/install/firebot_arm_pkg/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'TZ': 'America/Sao_Paulo', 'COLCON': '1'}, 'shell': False}
+[0.600952] (-) TimerEvent: {}
+[0.694567] (firebot_arm_pkg) StdoutLine: {'line': b'running egg_info\n'}
+[0.694944] (firebot_arm_pkg) StdoutLine: {'line': b'creating ../../build/firebot_arm_pkg/firebot_arm_pkg.egg-info\n'}
+[0.695109] (firebot_arm_pkg) StdoutLine: {'line': b'writing ../../build/firebot_arm_pkg/firebot_arm_pkg.egg-info/PKG-INFO\n'}
+[0.695334] (firebot_arm_pkg) StdoutLine: {'line': b'writing dependency_links to ../../build/firebot_arm_pkg/firebot_arm_pkg.egg-info/dependency_links.txt\n'}
+[0.695465] (firebot_arm_pkg) StdoutLine: {'line': b'writing entry points to ../../build/firebot_arm_pkg/firebot_arm_pkg.egg-info/entry_points.txt\n'}
+[0.695610] (firebot_arm_pkg) StdoutLine: {'line': b'writing requirements to ../../build/firebot_arm_pkg/firebot_arm_pkg.egg-info/requires.txt\n'}
+[0.695708] (firebot_arm_pkg) StdoutLine: {'line': b'writing top-level names to ../../build/firebot_arm_pkg/firebot_arm_pkg.egg-info/top_level.txt\n'}
+[0.695809] (firebot_arm_pkg) StdoutLine: {'line': b"writing manifest file '../../build/firebot_arm_pkg/firebot_arm_pkg.egg-info/SOURCES.txt'\n"}
+[0.696879] (firebot_arm_pkg) StdoutLine: {'line': b"reading manifest file '../../build/firebot_arm_pkg/firebot_arm_pkg.egg-info/SOURCES.txt'\n"}
+[0.697590] (firebot_arm_pkg) StdoutLine: {'line': b"writing manifest file '../../build/firebot_arm_pkg/firebot_arm_pkg.egg-info/SOURCES.txt'\n"}
+[0.697712] (firebot_arm_pkg) StdoutLine: {'line': b'running build\n'}
+[0.697769] (firebot_arm_pkg) StdoutLine: {'line': b'running build_scripts\n'}
+[0.697851] (firebot_arm_pkg) StdoutLine: {'line': b'creating /home/developer/ARM_ws/build/firebot_arm_pkg/build\n'}
+[0.697908] (firebot_arm_pkg) StdoutLine: {'line': b'creating /home/developer/ARM_ws/build/firebot_arm_pkg/build/scripts-3.10\n'}
+[0.697971] (firebot_arm_pkg) StdoutLine: {'line': b'copying scripts/kinematics.py -> /home/developer/ARM_ws/build/firebot_arm_pkg/build/scripts-3.10\n'}
+[0.698036] (firebot_arm_pkg) StdoutLine: {'line': b'changing mode of /home/developer/ARM_ws/build/firebot_arm_pkg/build/scripts-3.10/kinematics.py from 644 to 755\n'}
+[0.698080] (firebot_arm_pkg) StdoutLine: {'line': b'running install\n'}
+[0.698350] (firebot_arm_pkg) StdoutLine: {'line': b'running install_data\n'}
+[0.698427] (firebot_arm_pkg) StdoutLine: {'line': b'creating /home/developer/ARM_ws/install/firebot_arm_pkg/share/ament_index\n'}
+[0.698518] (firebot_arm_pkg) StdoutLine: {'line': b'creating /home/developer/ARM_ws/install/firebot_arm_pkg/share/ament_index/resource_index\n'}
+[0.698572] (firebot_arm_pkg) StdoutLine: {'line': b'creating /home/developer/ARM_ws/install/firebot_arm_pkg/share/ament_index/resource_index/packages\n'}
+[0.698633] (firebot_arm_pkg) StdoutLine: {'line': b'copying resource/firebot_arm_pkg -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/ament_index/resource_index/packages\n'}
+[0.698712] (firebot_arm_pkg) StdoutLine: {'line': b'copying package.xml -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg\n'}
+[0.698825] (firebot_arm_pkg) StdoutLine: {'line': b'creating /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/launch\n'}
+[0.698896] (firebot_arm_pkg) StdoutLine: {'line': b'copying launch/display.launch.py -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/launch\n'}
+[0.699006] (firebot_arm_pkg) StdoutLine: {'line': b'copying launch/gazebo.launch.py -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/launch\n'}
+[0.699115] (firebot_arm_pkg) StdoutLine: {'line': b'copying launch/controller.launch.py -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/launch\n'}
+[0.699226] (firebot_arm_pkg) StdoutLine: {'line': b'creating /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/config\n'}
+[0.699296] (firebot_arm_pkg) StdoutLine: {'line': b'copying config/display.rviz -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/config\n'}
+[0.699412] (firebot_arm_pkg) StdoutLine: {'line': b'copying config/controllers.yaml -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/config\n'}
+[0.699531] (firebot_arm_pkg) StdoutLine: {'line': b'creating /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/urdf\n'}
+[0.699598] (firebot_arm_pkg) StdoutLine: {'line': b'copying urdf/montagem.xacro -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/urdf\n'}
+[0.699713] (firebot_arm_pkg) StdoutLine: {'line': b'copying urdf/montagem.trans -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/urdf\n'}
+[0.699821] (firebot_arm_pkg) StdoutLine: {'line': b'copying urdf/montagem.gazebo -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/urdf\n'}
+[0.699926] (firebot_arm_pkg) StdoutLine: {'line': b'copying urdf/materials.xacro -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/urdf\n'}
+[0.700030] (firebot_arm_pkg) StdoutLine: {'line': b'copying urdf/montagem.control.xacro -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/urdf\n'}
+[0.700154] (firebot_arm_pkg) StdoutLine: {'line': b'creating /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/meshes\n'}
+[0.700226] (firebot_arm_pkg) StdoutLine: {'line': b'copying meshes/base_link.stl -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/meshes\n'}
+[0.700351] (firebot_arm_pkg) StdoutLine: {'line': b'copying meshes/linkvertical1_1.stl -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/meshes\n'}
+[0.700567] (firebot_arm_pkg) StdoutLine: {'line': b'copying meshes/linkhorizontal1_1.stl -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/meshes\n'}
+[0.700721] (firebot_arm_pkg) StdoutLine: {'line': b'copying meshes/linkvertical2_1.stl -> /home/developer/ARM_ws/install/firebot_arm_pkg/share/firebot_arm_pkg/meshes\n'}
+[0.700860] (firebot_arm_pkg) StdoutLine: {'line': b'running install_egg_info\n'}
+[0.701002] (-) TimerEvent: {}
+[0.702614] (firebot_arm_pkg) StdoutLine: {'line': b'Copying ../../build/firebot_arm_pkg/firebot_arm_pkg.egg-info to /home/developer/ARM_ws/install/firebot_arm_pkg/lib/python3.10/site-packages/firebot_arm_pkg-0.0.1-py3.10.egg-info\n'}
+[0.703528] (firebot_arm_pkg) StdoutLine: {'line': b'running install_scripts\n'}
+[0.720224] (firebot_arm_pkg) StdoutLine: {'line': b'creating /home/developer/ARM_ws/install/firebot_arm_pkg/lib/firebot_arm_pkg\n'}
+[0.720489] (firebot_arm_pkg) StdoutLine: {'line': b'copying /home/developer/ARM_ws/build/firebot_arm_pkg/build/scripts-3.10/kinematics.py -> /home/developer/ARM_ws/install/firebot_arm_pkg/lib/firebot_arm_pkg\n'}
+[0.720577] (firebot_arm_pkg) StdoutLine: {'line': b'changing mode of /home/developer/ARM_ws/install/firebot_arm_pkg/lib/firebot_arm_pkg/kinematics.py to 755\n'}
+[0.721427] (firebot_arm_pkg) StdoutLine: {'line': b'Installing kinematics script to /home/developer/ARM_ws/install/firebot_arm_pkg/lib/firebot_arm_pkg\n'}
+[0.721631] (firebot_arm_pkg) StdoutLine: {'line': b"writing list of installed files to '/home/developer/ARM_ws/build/firebot_arm_pkg/install.log'\n"}
+[0.743168] (firebot_arm_pkg) CommandEnded: {'returncode': 0}
+[0.751330] (firebot_arm_pkg) JobEnded: {'identifier': 'firebot_arm_pkg', 'rc': 0}
+[0.751825] (-) EventReactorShutdown: {}

@@ -21,7 +21,5 @@
 /home/developer/ARM_ws/install/firebot_arm_pkg/lib/python3.10/site-packages/firebot_arm_pkg-0.0.1-py3.10.egg-info/zip-safe
 /home/developer/ARM_ws/install/firebot_arm_pkg/lib/python3.10/site-packages/firebot_arm_pkg-0.0.1-py3.10.egg-info/dependency_links.txt
 /home/developer/ARM_ws/install/firebot_arm_pkg/lib/python3.10/site-packages/firebot_arm_pkg-0.0.1-py3.10.egg-info/top_level.txt
-/home/developer/ARM_ws/install/firebot_arm_pkg/lib/firebot_arm_pkg/direct_kinematics.py
-/home/developer/ARM_ws/install/firebot_arm_pkg/lib/firebot_arm_pkg/inverse_kinematics.py
-/home/developer/ARM_ws/install/firebot_arm_pkg/lib/firebot_arm_pkg/direct_kinematics
-/home/developer/ARM_ws/install/firebot_arm_pkg/lib/firebot_arm_pkg/inverse_kinematics
+/home/developer/ARM_ws/install/firebot_arm_pkg/lib/firebot_arm_pkg/kinematics.py
+/home/developer/ARM_ws/install/firebot_arm_pkg/lib/firebot_arm_pkg/kinematics
