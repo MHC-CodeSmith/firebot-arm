@@ -1,1 +1,28 @@
-/home/developer/ARM_ws/build/firebot_arm_pkg/config/controllers.yaml
+controller_manager:
+  ros__parameters:
+    update_rate: 100
+    use_sim_time: true
+
+joint_state_broadcaster:
+  ros__parameters:
+    type: joint_state_broadcaster/JointStateBroadcaster
+
+trajectory_position_controller:
+  ros__parameters:
+    type: joint_trajectory_controller/JointTrajectoryController
+    joints:
+      - linkvertical1_to_base_link
+      - linkvertical2_to_linkvertical1
+      - linkhorizontal1_to_linkvertical2
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    state_publish_rate: 50
+    action_monitor_rate: 10
+    allow_partial_joints_goal: false
+    constraints:
+      stopped_velocity_tolerance: 0.01
+      goal_time: 0.0
+    open_loop_control: false

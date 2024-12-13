@@ -1,1 +1,182 @@
-/home/developer/ARM_ws/build/firebot_arm_pkg/urdf/montagem.xacro
+<?xml version="1.0" ?>
+<robot name="montagem" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Inclui arquivos Xacro externos -->
+  <xacro:include filename="$(find firebot_arm_pkg)/urdf/materials.xacro" />
+  <xacro:include filename="$(find firebot_arm_pkg)/urdf/montagem.trans" />
+  <xacro:include filename="$(find firebot_arm_pkg)/urdf/montagem.gazebo" />
+  <xacro:include filename="$(find firebot_arm_pkg)/urdf/montagem.control.xacro" />
+
+  <!-- Propriedades geométricas e de transformação entre links -->
+  <xacro:property name="base_to_vertical1_xyz" value="0.0 0.0 0.012"/>
+  <!-- Define a posição (xyz) da junta que conecta o link base ao primeiro link vertical, ajustando a elevação em z para compensar a base do robô. -->
+  <xacro:property name="base_to_vertical1_rpy" value="0 0 0"/>
+
+  <xacro:property name="vertical1_to_vertical2_xyz" value="0 0 0.71"/>
+  <!-- Define a posição (xyz) relativa entre o primeiro e o segundo link vertical, especificando o deslocamento em z necessário. -->
+  <xacro:property name="vertical1_to_vertical2_rpy" value="0 0 0"/>
+
+  <xacro:property name="vertical2_to_horizontal1_xyz" value="0.7 0 0"/>
+  <!-- Especifica o deslocamento em x entre o segundo link vertical e o link horizontal, indicando a extensão do braço horizontalmente. -->
+  <xacro:property name="vertical2_to_horizontal1_rpy" value="0 0 0"/>
+  
+  <!-- Fator de escala aplicado às malhas STL dos links para ajustar o tamanho ao modelo desejado. -->
+  <xacro:property name="mesh_scale" value="0.001 0.001 0.001"/>
+
+  <!-- Origem visual e de colisão dos links -->
+  <xacro:property name="base_visual_origin_xyz" value="0 0 0"/>
+  <xacro:property name="base_collision_origin_xyz" value="0 0 0"/>
+
+  <xacro:property name="vertical2_visual_origin_xyz" value="0 0 -0.722"/>
+  <xacro:property name="vertical2_collision_origin_xyz" value="0 0 -0.722"/>
+
+  <xacro:property name="horizontal1_visual_origin_xyz" value="-0.7 0 -0.72"/>
+  <!-- Define a origem visual em x do link horizontal, compensando a extensão em x do braço horizontal. -->
+  <xacro:property name="horizontal1_collision_origin_xyz" value="-0.7 0 -0.72"/>
+  <!-- Define a origem de colisão para o link horizontal, necessária para cálculos físicos. -->
+
+  <xacro:property name="vertical1_visual_origin_xyz" value="-0.0 -0.0 -0.012"/>
+  <xacro:property name="vertical1_collision_origin_xyz" value="-0.0 -0.0 -0.012"/>
+
+
+  <!-- Definição do link base -->
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="6.658605629283565"/>
+      <inertia ixx="0.037535" iyy="0.037535" izz="0.074909" ixy="0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="${base_visual_origin_xyz}" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find firebot_arm_pkg)/meshes/base_link.stl" scale="${mesh_scale}"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="${base_collision_origin_xyz}" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find firebot_arm_pkg)/meshes/base_link.stl" scale="${mesh_scale}"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Link vertical intermediário -->
+  <link name="linkvertical2_1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="22.200698974756893"/>
+      <inertia ixx="0.120664" iyy="0.121156" izz="0.231556" ixy="-0.0" iyz="0.000483" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="${vertical2_visual_origin_xyz}" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find firebot_arm_pkg)/meshes/linkvertical2_1.stl" scale="${mesh_scale}"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="${vertical2_collision_origin_xyz}" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find firebot_arm_pkg)/meshes/linkvertical2_1.stl" scale="${mesh_scale}"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Link horizontal principal -->
+  <link name="linkhorizontal1_1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="64.5078521087531"/>
+      <inertia ixx="0.463187" iyy="4.315019" izz="4.195976" ixy="0.08206" iyz="0.004506" ixz="0.022093"/>
+    </inertial>
+    <visual>
+      <origin xyz="${horizontal1_visual_origin_xyz}" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find firebot_arm_pkg)/meshes/linkhorizontal1_1.stl" scale="${mesh_scale}"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="${horizontal1_collision_origin_xyz}" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find firebot_arm_pkg)/meshes/linkhorizontal1_1.stl" scale="${mesh_scale}"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Primeiro link vertical -->
+  <link name="linkvertical1_1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="19.37534476967245"/>
+      <inertia ixx="1.238356" iyy="1.238356" izz="0.290239" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="${vertical1_visual_origin_xyz}" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find firebot_arm_pkg)/meshes/linkvertical1_1.stl" scale="${mesh_scale}"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="${vertical1_collision_origin_xyz}" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find firebot_arm_pkg)/meshes/linkvertical1_1.stl" scale="${mesh_scale}"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Juntas conectando os links -->
+  <joint name="linkvertical2_to_linkvertical1" type="prismatic">
+    <origin xyz="${vertical1_to_vertical2_xyz}" rpy="${vertical1_to_vertical2_rpy}"/>
+    <parent link="linkvertical1_1"/>
+    <child link="linkvertical2_1"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <limit upper="0.0" lower="-0.65" effort="100" velocity="100"/>
+    <dynamics damping="0.1" friction="0.0"/>
+  </joint>
+
+  <joint name="linkhorizontal1_to_linkvertical2" type="prismatic">
+    <origin xyz="${vertical2_to_horizontal1_xyz}" rpy="${vertical2_to_horizontal1_rpy}"/>
+    <parent link="linkvertical2_1"/>
+    <child link="linkhorizontal1_1"/>
+    <axis xyz="-1.0 0.0 0.0"/>
+    <limit upper="0.48" lower="0.05" effort="100" velocity="100"/>
+    <dynamics damping="0.1" friction="0.0"/>
+  </joint>
+
+  <joint name="linkvertical1_to_base_link" type="continuous">
+    <origin xyz="${base_to_vertical1_xyz}" rpy="${base_to_vertical1_rpy}"/>
+    <parent link="base_link"/>
+    <child link="linkvertical1_1"/>
+    <axis xyz="0.0 0.0 1.0"/>
+  </joint>
+
+
+  <!-- Links e juntas dummy para compensar inércia e centralizar o modelo -->
+  <link name="dummy_base_inertia">
+  <inertial>
+    <mass value="0.1"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+  </inertial>
+</link>
+<joint name="dummy_base_to_inertia" type="fixed">
+  <parent link="dummy_base_link"/>
+  <child link="dummy_base_inertia"/>
+  <origin rpy="0 0 0" xyz="0 0 0"/>
+</joint>
+
+
+<link name="dummy_base_link">
+
+</link>
+
+<joint name="base_to_dummy" type="fixed">
+  <parent link="dummy_base_link"/>
+  <child link="base_link"/>
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+</joint>
+
+</robot>

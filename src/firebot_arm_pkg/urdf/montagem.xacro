@@ -19,9 +19,9 @@
   <xacro:property name="vertical2_to_horizontal1_xyz" value="0.7 0 0"/>
   <!-- Especifica o deslocamento em x entre o segundo link vertical e o link horizontal, indicando a extensão do braço horizontalmente. -->
   <xacro:property name="vertical2_to_horizontal1_rpy" value="0 0 0"/>
-
-  <xacro:property name="mesh_scale" value="0.001 0.001 0.001"/>
+  
   <!-- Fator de escala aplicado às malhas STL dos links para ajustar o tamanho ao modelo desejado. -->
+  <xacro:property name="mesh_scale" value="0.001 0.001 0.001"/>
 
   <!-- Origem visual e de colisão dos links -->
   <xacro:property name="base_visual_origin_xyz" value="0 0 0"/>
@@ -32,7 +32,7 @@
 
   <xacro:property name="horizontal1_visual_origin_xyz" value="-0.7 0 -0.72"/>
   <!-- Define a origem visual em x do link horizontal, compensando a extensão em x do braço horizontal. -->
-  <xacro:property name="horizontal1_collision_origin_xyz" value="0 0 -0.72"/>
+  <xacro:property name="horizontal1_collision_origin_xyz" value="-0.7 0 -0.72"/>
   <!-- Define a origem de colisão para o link horizontal, necessária para cálculos físicos. -->
 
   <xacro:property name="vertical1_visual_origin_xyz" value="-0.0 -0.0 -0.012"/>
@@ -42,7 +42,7 @@
   <!-- Definição do link base -->
   <link name="base_link">
     <inertial>
-      <origin xyz="4.288906000090392e-17 2.144453000045196e-17 0.006000000000000001" rpy="0 0 0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <mass value="6.658605629283565"/>
       <inertia ixx="0.037535" iyy="0.037535" izz="0.074909" ixy="0.0" iyz="0.0" ixz="0.0"/>
     </inertial>
@@ -64,7 +64,7 @@
   <!-- Link vertical intermediário -->
   <link name="linkvertical2_1">
     <inertial>
-      <origin xyz="-0.10499999999999998 -0.10833033334588331 -0.024647039210627608" rpy="0 0 0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <mass value="22.200698974756893"/>
       <inertia ixx="0.120664" iyy="0.121156" izz="0.231556" ixy="-0.0" iyz="0.000483" ixz="0.0"/>
     </inertial>
@@ -86,7 +86,7 @@
   <!-- Link horizontal principal -->
   <link name="linkhorizontal1_1">
     <inertial>
-      <origin xyz="0.6580876662919757 -0.12129223916653174 -0.6485017566986815" rpy="0 0 0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <mass value="64.5078521087531"/>
       <inertia ixx="0.463187" iyy="4.315019" izz="4.195976" ixy="0.08206" iyz="0.004506" ixz="0.022093"/>
     </inertial>
@@ -108,7 +108,7 @@
   <!-- Primeiro link vertical -->
   <link name="linkvertical1_1">
     <inertial>
-      <origin xyz="-1.4739419594933348e-17 -2.9478839189866696e-17 0.2748543377105598" rpy="0 0 0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <mass value="19.37534476967245"/>
       <inertia ixx="1.238356" iyy="1.238356" izz="0.290239" ixy="0.0" iyz="-0.0" ixz="0.0"/>
     </inertial>
@@ -134,6 +134,7 @@
     <child link="linkvertical2_1"/>
     <axis xyz="0.0 0.0 1.0"/>
     <limit upper="0.0" lower="-0.65" effort="100" velocity="100"/>
+    <dynamics damping="0.1" friction="0.0"/>
   </joint>
 
   <joint name="linkhorizontal1_to_linkvertical2" type="prismatic">
@@ -142,6 +143,7 @@
     <child link="linkhorizontal1_1"/>
     <axis xyz="-1.0 0.0 0.0"/>
     <limit upper="0.48" lower="0.05" effort="100" velocity="100"/>
+    <dynamics damping="0.1" friction="0.0"/>
   </joint>
 
   <joint name="linkvertical1_to_base_link" type="continuous">
