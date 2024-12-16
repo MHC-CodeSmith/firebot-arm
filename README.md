@@ -141,14 +141,6 @@ Abaixo está a estrutura do projeto:
 
 ---
 
-## **Próximos Passos**
-
-- Adicionar configurações adicionais para controladores e cinemática do robô.
-- Criar diagramas para documentar os fluxos de dados.
-- Melhorar a integração entre Gazebo e os controladores.
-
----
-
 ## **Licença**
 
 Este projeto está licenciado sob a licença [MIT](LICENSE).
