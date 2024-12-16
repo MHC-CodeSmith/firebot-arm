@@ -1,6 +1,3 @@
-Aqui está um novo e detalhado `README.md` explicando passo a passo como configurar e rodar o projeto do zero.
-
----
 
 # Firebot Arm Control
 
